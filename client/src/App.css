@@ -1,0 +1,10 @@
+.navbar {
+  height: 3.5em;
+}
+.links {
+  display: flex;
+  justify-content: end;
+}
+.links > {
+  padding-left: 1%;
+}

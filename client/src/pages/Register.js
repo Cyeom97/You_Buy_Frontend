@@ -88,7 +88,6 @@ const Register = () => {
             Sign In
           </button>
         </form>
-        git
       </div>
     </div>
   )
