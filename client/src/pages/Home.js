@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <div className="homepage">
       <h1>Our Latest Selection!</h1>
-      <section>
+      <section className="item-list">
         {posts.map((post) => (
           <div>
             <h2>{post.name}</h2>
