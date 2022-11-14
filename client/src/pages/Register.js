@@ -35,57 +35,61 @@ const Register = () => {
     <div className="signin col">
       <div className="card-overlay centered">
         <form className="col" onSubmit={handleSubmit}>
+          <h1>Create an Account</h1>
           <div className="input-wrapper">
-            <label htmlFor="name">Name</label>
             <input
+              className="name"
               onChange={handleChange}
               name="name"
               type="text"
-              placeholder="John Smith"
+              placeholder="Name"
               value={formValues.name}
               required
             />
           </div>
           <div className="input-wrapper">
-            <label htmlFor="email">Email</label>
             <input
+              className="email"
               onChange={handleChange}
               name="email"
               type="email"
-              placeholder="example@example.com"
+              placeholder="Email"
               value={formValues.email}
               required
             />
           </div>
 
           <div className="input-wrapper">
-            <label htmlFor="password">Password</label>
             <input
+              className="password"
               onChange={handleChange}
               type="password"
               name="password"
+              placeholder="Password"
               value={formValues.password}
               required
             />
           </div>
-          <div className="input-wrapper">
-            <label htmlFor="confirmPassword">Confirm Password</label>
+          <div className="input-wrapper Password">
             <input
+              className="confirmpassword"
               onChange={handleChange}
               type="password"
               name="confirmPassword"
+              placeholder="Confirm Password"
               value={formValues.confirmPassword}
               required
             />
           </div>
           <button
+            className="regButton"
             disabled={
               !formValues.email ||
               (!formValues.password &&
                 formValues.confirmPassword === formValues.password)
             }
           >
-            Sign In
+            Create Account
           </button>
         </form>
       </div>
