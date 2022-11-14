@@ -40,9 +40,9 @@ function App() {
       />
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Home />} />
           <Route
-            path="/signin"
+            path="/Signin"
             element={
               <SignIn
                 setUser={setUser}
@@ -50,7 +50,7 @@ function App() {
               />
             }
           />
-          <Route path="/register" element={<Register />} />
+          <Route path="/Register" element={<Register />} />
         </Routes>
       </main>
     </div>
