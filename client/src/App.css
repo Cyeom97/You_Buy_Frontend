@@ -72,3 +72,25 @@ h1, p{
   padding: .7em;
   width: 25%;
 }
+
+.item-list {
+display: flex;
+justify-content: space-around;
+
+}
+
+.item-list div h3 {
+margin-left: -70px;
+}
+
+.welcome-signin {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  padding: .7em;
+}
+
+.welcome-signin button {
+  font-size: 20px;
+  margin-top: 30px;
+}
