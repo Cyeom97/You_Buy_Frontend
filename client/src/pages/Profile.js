@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
 const Profile = ({ user, authenticated }) => {
-  const [aUser, setAUser] = useState([])
   const [products, setProducts] = useState([])
   let { id } = useParams()
   let navigate = useNavigate()
@@ -12,17 +11,19 @@ const Profile = ({ user, authenticated }) => {
     navigate(`${oneProduct}`)
   }
 
+  console.log(user.id)
+
   useEffect(() => {
     const handleUser = async () => {
       let productResponse = await axios.get(
-        `http://localhost:3001/products/${id}`
+        `http://localhost:3001/profile/${id}`
       )
       setProducts(productResponse.data)
     }
     handleUser()
   }, [id])
 
-  return user & authenticated ? (
+  return user && authenticated ? (
     <div>
       <section className="container-grid">
         {products.map((product) => (

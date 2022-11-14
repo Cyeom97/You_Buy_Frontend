@@ -7,7 +7,7 @@ if (user) {
     <nav className="links">
       <h3>Welcome</h3>
       <Link to="/products">Home</Link>
-      <Link onClick={handleLogout} to="products">Sign Out</Link>
+      <Link onClick={handleLogout} to="/products">Sign Out</Link>
     </nav>
   )
 }

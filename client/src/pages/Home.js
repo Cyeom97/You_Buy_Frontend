@@ -10,7 +10,7 @@ const Home = () => {
   useEffect(() => {
     const apiCall = async () => {
       let response = await axios.get('http://localhost:3001/products')
-      console.log(response.data)
+
       setPosts(response.data)
     }
     apiCall()
@@ -22,7 +22,7 @@ const Home = () => {
   return (
     <div className="homepage">
       <h1>Our Latest Selection!</h1>
-      <section>
+      <section className="item-list">
         {posts.map((post) => (
           <div>
             <h2>{post.name}</h2>
