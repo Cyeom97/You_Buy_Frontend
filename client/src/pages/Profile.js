@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
 const Profile = ({ user, authenticated }) => {
-  const [aUser, setAUser] = useState([])
   const [products, setProducts] = useState([])
   let { id } = useParams()
   let navigate = useNavigate()
