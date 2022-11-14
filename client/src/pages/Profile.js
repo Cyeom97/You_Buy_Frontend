@@ -12,6 +12,8 @@ const Profile = ({ user, authenticated }) => {
     navigate(`${oneProduct}`)
   }
 
+  console.log(user.id)
+
   useEffect(() => {
     const handleUser = async () => {
       let productResponse = await axios.get(
