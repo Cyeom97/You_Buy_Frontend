@@ -15,14 +15,14 @@ const Profile = ({ user, authenticated }) => {
   useEffect(() => {
     const handleUser = async () => {
       let productResponse = await axios.get(
-        `http://localhost:3001/products/${id}`
+        `http://localhost:3001/profile/${id}`
       )
       setProducts(productResponse.data)
     }
     handleUser()
   }, [id])
 
-  return user & authenticated ? (
+  return user && authenticated ? (
     <div>
       <section className="container-grid">
         {products.map((product) => (
