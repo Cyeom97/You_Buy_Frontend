@@ -4,6 +4,7 @@ import Nav from './components/Nav'
 import Register from './pages/Register'
 import SignIn from './pages/SignIn'
 import Home from './pages/Home'
+import Profile from './pages/Profile'
 import './App.css'
 import { CheckSession } from './services/Auth'
 
@@ -51,6 +52,10 @@ function App() {
             }
           />
           <Route path="/Register" element={<Register />} />
+          <Route
+            path="/profile/:id"
+            element={<Profile user={user} authenticated={authenticated} />}
+          />
         </Routes>
       </main>
     </div>
