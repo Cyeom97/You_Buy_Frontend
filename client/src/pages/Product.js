@@ -16,7 +16,7 @@ const GetProduct = () => {
       setSelectedProduct(response.data)
     }
     apiCall()
-  })
+  }, [])
   return (
     <div>
       <div>{selectedProduct && <ViewProduct product={selectedProduct} />}</div>
