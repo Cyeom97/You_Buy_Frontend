@@ -15,6 +15,10 @@ const Home = () => {
     apiCall()
   }, [])
 
+  const viewProduct = (posts) => {
+    navigate(`${posts}`)
+  }
+
   return (
     <div className="homepage">
       <h1>Our Latest Selection!</h1>
@@ -28,6 +32,9 @@ const Home = () => {
               height="130px"
               src={post.image}
               alt="Product"
+              onClick={() => {
+                viewProduct(post.id)
+              }}
             ></img>
             <h3> {post.description} </h3>
           </div>
