@@ -26,7 +26,7 @@ const Home = () => {
       <h1>Our Latest Selection!</h1>
       <section className="item-list">
         {posts.map((post) => (
-          <div>
+          <div key={post.id}>
             <h2>{post.name}</h2>
             <img
               style={{ display: 'block', border: 'solid' }}
