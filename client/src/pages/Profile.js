@@ -5,6 +5,18 @@ import { useNavigate, useParams } from 'react-router-dom'
 const Profile = ({ user, authenticated }) => {
   let { id } = useParams()
   const [products, setProducts] = useState([])
+  const [updateAProduct, setUpdateAProduct] = useState([
+    {
+      name: '',
+      description: '',
+      image: '',
+      price: '',
+      saleId: ''
+    }
+  ])
+  const [deleted, setDeleted] = useState({
+    id: ''
+  })
   const [form, setForm] = useState({
     name: '',
     description: '',
@@ -29,6 +41,12 @@ const Profile = ({ user, authenticated }) => {
     setForm({ ...form, [event.target.id]: event.target.value })
   }
 
+  const updateChange = (event, index) => {
+    const updatedProduct = [...updateAProduct]
+    updatedProduct[index][event.target.id] = event.target.value
+    setUpdateAProduct(updatedProduct)
+  }
+
   const handleSubmit = async (event) => {
     event.preventDefault()
     let newProduct = await axios.post(
@@ -39,15 +57,72 @@ const Profile = ({ user, authenticated }) => {
     setForm({ name: '', description: '', image: '', price: '' })
   }
 
+  const handleUpdate = async (event) => {
+    event.preventDefault()
+    let updateProduct = await axios.put(
+      `http://localhost:3001/${id}`,
+      updateAProduct
+    )
+    setProducts([products, updateProduct.data])
+    setUpdateAProduct({ name: '', description: '', image: '', price: '' })
+  }
+
+  const handleDelete = async (event) => {
+    event.preventDefault()
+    setDeleted({ ...deleted, [event.target.id]: event.target.value })
+    let deleteProduct = await axios.delete(
+      `http://localhost:3001/profile/${id}`,
+      deleted
+    )
+    console.log(deleteProduct)
+  }
+
   return user && authenticated ? (
     <div>
       <section className="container-grid">
-        {products.map((product) => (
-          <div>
+        {products.map((product, index) => (
+          <div key={product.id}>
             <h2>{product.name}</h2>
             <img src={product.image} alt={product.name} className="img" />
             <h3>{product.description}</h3>
             <h3>{product.price}</h3>
+            <div>
+              <form onSubmit={handleUpdate} className="form-type">
+                <label htmlFor="name">Name:</label>
+                <input
+                  id="name"
+                  name="name"
+                  value={updateAProduct.name}
+                  onChange={(event) => updateChange(event, index)}
+                ></input>
+                <label htmlFor="image">Image URL:</label>
+                <input
+                  id="image"
+                  value={updateAProduct.image}
+                  onChange={(event) => updateChange(event, index)}
+                ></input>
+                <label htmlFor="description">Description:</label>
+                <textarea
+                  id="description"
+                  value={updateAProduct.description}
+                  onChange={(event) => updateChange(event, index)}
+                ></textarea>
+                <label htmlFor="price">Price:</label>
+                <input
+                  id="price"
+                  value={updateAProduct.price}
+                  onChange={(event) => updateChange(event, index)}
+                ></input>
+                <input
+                  id="id"
+                  value={(updateAProduct.saleId = product.id)}
+                ></input>
+                <button type="submit">Update Product</button>
+                <button id="id" value={product.id} onClick={handleDelete}>
+                  Delete
+                </button>
+              </form>
+            </div>
           </div>
         ))}
       </section>
