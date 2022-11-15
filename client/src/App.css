@@ -1,11 +1,18 @@
 .navbar {
-  height: 4.5em;
-  background-color: aqua;
+  height: 9em;
+  background-color: lightslategray;
+}
+.logo {
+  display: flex;
+  justify-content: start;
+  padding: .5%;
+  width: 10em;
+  border-radius: 50%;
 }
 .links {
   display: flex;
   overflow: hidden;
-  background-color: aqua;
+  background-color: lightslategray;
   margin-bottom: 5em;
   justify-content: flex-end;
   font-size: larger;
@@ -15,7 +22,7 @@
   float: left;
   text-align: center;
   text-decoration: none;
-  font-size: 120%;
+  font-size: 135%;
   margin-right: 8px;
 }
 

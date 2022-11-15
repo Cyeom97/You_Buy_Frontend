@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import logo from '../Images/0Qxdovr - Imgur.jpg'
 
 const Nav = ({ authenticated, user, handleLogout }) => {
   let authenticatedOptions
@@ -32,6 +33,7 @@ return (
   <header>
     <Link to="/products">
       <div className="navbar">
+      <img className='logo'src={logo} alt="logo" />
         <img />
       </div>
     </Link>
