@@ -5,9 +5,10 @@ const Nav = ({ authenticated, user, handleLogout }) => {
 if (user) {
   authenticatedOptions = (
     <nav className="links">
-      <h3>Welcome {user.email}! </h3>
+      {/* <h3>Welcome {user.email}! </h3> */}
       <Link to="/products">Home</Link>
       <Link onClick={handleLogout} to="/products">Sign Out</Link>
+      <Link className="profile">👤</Link>
     </nav>
   )
 }
@@ -17,8 +18,6 @@ const publicOptions = (
     <Link to="/products">Home</Link>
     <Link to="/Register">Register</Link>
     <Link to="/Signin">Sign In</Link>
-    <Link to='/Signin'>👤</Link>
-    
   </nav>
 )
 

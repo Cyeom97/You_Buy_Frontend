@@ -11,6 +11,7 @@
 }
 .links a {
   padding-left: 1.5%;
+  text-align: center;
   text-decoration: none;
   font-size: 120%;
 }
@@ -51,6 +52,9 @@ h1, p {
   font-size: .875rem;
   height: 40px;
   margin: 0;
+}
+.profile {
+  
 }
 
 ::placeholder {
