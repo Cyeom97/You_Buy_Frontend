@@ -54,7 +54,13 @@ const Profile = ({ user, authenticated }) => {
     event.preventDefault()
     let updateProduct = await Client.put(`/profile/${id}`, updateAProduct)
     setProducts([products, updateProduct.data])
-    setUpdateAProduct({ name: '', description: '', image: '', price: '' })
+    setUpdateAProduct({
+      name: '',
+      description: '',
+      image: '',
+      price: '',
+      saleId: ''
+    })
   }
 
   const handleDelete = async (event) => {
