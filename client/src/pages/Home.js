@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import { BASE_URL } from '../services/api'
 
 const Home = () => {
   let navigate = useNavigate()
@@ -9,8 +10,8 @@ const Home = () => {
 
   useEffect(() => {
     const apiCall = async () => {
-      let response = await axios.get('http://localhost:3001/products')
-
+      let response = await axios.get(`${BASE_URL}products`)
+      console.log(response)
       setPosts(response.data)
     }
     apiCall()

@@ -1,6 +1,6 @@
-import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import Client from '../services/api'
 
 const Profile = ({ user, authenticated }) => {
   let { id } = useParams()
@@ -14,9 +14,7 @@ const Profile = ({ user, authenticated }) => {
       saleId: ''
     }
   ])
-  const [deleted, setDeleted] = useState({
-    id: ''
-  })
+  const [deleted, setDeleted] = useState()
   const [form, setForm] = useState({
     name: '',
     description: '',
@@ -29,9 +27,7 @@ const Profile = ({ user, authenticated }) => {
 
   useEffect(() => {
     const handleUser = async () => {
-      let productResponse = await axios.get(
-        `http://localhost:3001/profile/${id}`
-      )
+      let productResponse = await Client.get(`profile/${id}`)
       setProducts(productResponse.data)
     }
     handleUser()
@@ -49,31 +45,24 @@ const Profile = ({ user, authenticated }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    let newProduct = await axios.post(
-      `http://localhost:3001/profile/${id}`,
-      form
-    )
+    let newProduct = await Client.post(`profile/${id}`, form)
     setProducts([...products, newProduct.data])
     setForm({ name: '', description: '', image: '', price: '' })
   }
 
   const handleUpdate = async (event) => {
     event.preventDefault()
-    let updateProduct = await axios.put(
-      `http://localhost:3001/${id}`,
-      updateAProduct
-    )
+    let updateProduct = await Client.put(`/profile/${id}`, updateAProduct)
     setProducts([products, updateProduct.data])
     setUpdateAProduct({ name: '', description: '', image: '', price: '' })
   }
 
   const handleDelete = async (event) => {
     event.preventDefault()
-    setDeleted({ ...deleted, [event.target.id]: event.target.value })
-    let deleteProduct = await axios.delete(
-      `http://localhost:3001/profile/${id}`,
-      deleted
-    )
+    setDeleted({ [event.target.id]: event.target.value })
+    console.log(deleted.id)
+    let deleteProduct = await Client.delete(`/profile/${id}`, deleted)
+    setProducts([products, deleteProduct.data])
     console.log(deleteProduct)
   }
 
@@ -113,13 +102,9 @@ const Profile = ({ user, authenticated }) => {
                   value={updateAProduct.price}
                   onChange={(event) => updateChange(event, index)}
                 ></input>
-                <input
-                  id="id"
-                  value={(updateAProduct.saleId = product.id)}
-                ></input>
-                <button type="submit">Update Product</button>
-                <button id="id" value={product.id} onClick={handleDelete}>
-                  Delete
+                <input id="id" value={product.id}></input>
+                <button id="update" type="submit">
+                  Update Product
                 </button>
               </form>
             </div>
