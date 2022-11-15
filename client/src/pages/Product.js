@@ -3,6 +3,7 @@ import ViewProduct from '../components/ViewProduct'
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { BASE_URL } from '../services/api'
+
 import axios from 'axios'
 
 const GetProduct = () => {

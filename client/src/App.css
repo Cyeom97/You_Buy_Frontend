@@ -7,7 +7,7 @@
   overflow: hidden;
   background-color: aqua;
   margin-bottom: 5em;
-  justify-content: end;
+  justify-content: flex-end;
   font-size: larger;
 }
 .links a{
@@ -16,6 +16,7 @@
   text-align: center;
   text-decoration: none;
   font-size: 120%;
+  margin-right: 8px;
 }
 
 .links a:hover, .dropdown:hover, .dropbtn {
@@ -128,4 +129,9 @@ margin-left: -70px;
 .welcome-signin button {
   font-size: 20px;
   margin-top: 30px;
+}
+
+.links h3 {
+  padding: 5px 10px;
+  margin: auto 1em
 }

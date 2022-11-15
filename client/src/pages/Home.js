@@ -20,6 +20,7 @@ const Home = () => {
   const viewProduct = (posts) => {
     navigate(`${posts}`)
   }
+
   return (
     <div className="homepage">
       <h1>Our Latest Selection!</h1>
@@ -32,7 +33,7 @@ const Home = () => {
               width="130px"
               height="130px"
               src={post.image}
-              alt="Product image"
+              alt="Product"
               onClick={() => {
                 viewProduct(post.id)
               }}
