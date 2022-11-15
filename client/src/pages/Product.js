@@ -2,7 +2,6 @@ import React from 'react'
 import ViewProduct from '../components/ViewProduct'
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 const GetProduct = () => {

@@ -10,15 +10,11 @@ const Home = () => {
   useEffect(() => {
     const apiCall = async () => {
       let response = await axios.get('http://localhost:3001/products')
-
       setPosts(response.data)
     }
     apiCall()
   }, [])
 
-  const viewProduct = (posts) => {
-    navigate(`${posts}`)
-  }
   return (
     <div className="homepage">
       <h1>Our Latest Selection!</h1>
@@ -31,10 +27,7 @@ const Home = () => {
               width="130px"
               height="130px"
               src={post.image}
-              alt="Product image"
-              onClick={() => {
-                viewProduct(post.id)
-              }}
+              alt="Product"
             ></img>
             <h3> {post.description} </h3>
           </div>
