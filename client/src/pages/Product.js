@@ -13,7 +13,7 @@ const GetProduct = () => {
 
   useEffect(() => {
     const apiCall = async () => {
-      const response = await axios.get(`${BASE_URL}/products/${id}`)
+      const response = await axios.get(`${BASE_URL}products/${id}`)
       setSelectedProduct(response.data)
       console.log(response.data)
     }
