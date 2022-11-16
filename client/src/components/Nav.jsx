@@ -40,7 +40,7 @@ const publicOptions = (
 )
 
 return (
-  <header>
+  <header className='sticky-header'>
     <Link to="/products">
       <div className="navbar">
       <img className='logo'src={logo} alt="logo" />

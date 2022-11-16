@@ -191,7 +191,7 @@ const Profile = ({ user, authenticated }) => {
         <select id="category" value={form.category} onChange={handleChange}>
           <option>-SELECT CATEGORY-</option>
           <option value="Comics">Comics</option>
-          <option value="Collectable Cards">Collectable Cards</option>
+          <option value="Collectible Cards">Collectable Cards</option>
           <option value="Video Games">Video Games</option>
           <option value="Tech">Tech</option>
           <option value="Sports">Sports</option>

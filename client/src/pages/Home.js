@@ -25,6 +25,7 @@ const Home = () => {
   }
   const pickCategory = (category) => {
     setCategory(category)
+    navigate(`/category/${category}`)
   }
   return (
     <div className="homepage">

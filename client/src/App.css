@@ -2,6 +2,10 @@
   height: 9em;
   background-color: lightslategray;
 }
+.sticky-header {
+  position: sticky;
+  top: 0;
+}
 .logo {
   display: flex;
   justify-content: start;
