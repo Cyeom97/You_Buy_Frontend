@@ -121,6 +121,7 @@ display: inline-block;
 justify-content: space-around;
 margin: 35px;
 background-color: aliceblue;
+flex-flow: row;
 }
 
 
