@@ -5,14 +5,8 @@ import Client from '../services/api'
 const Profile = ({ user, authenticated }) => {
   let { id } = useParams()
   const [products, setProducts] = useState([])
-  const [updateAProduct, setUpdateAProduct] = useState({
-    // name: '',
-    // description: '',
-    // image: '',
-    // price: '',
-    // saleId: ''
-  })
-  // const [deleted, setDeleted] = useState()
+  const [updateAProduct, setUpdateAProduct] = useState({})
+  const [comments, setComments] = useState([])
   const [form, setForm] = useState({
     name: '',
     description: '',
@@ -30,6 +24,15 @@ const Profile = ({ user, authenticated }) => {
     }
     handleUser()
   }, [id])
+
+  useEffect(() => {
+    let productList = products?.map((product) => {
+      product?.Comments.map((comment) => {
+        console.log(comment.name)
+      })
+    })
+    setComments(productList)
+  }, [])
 
   const handleChange = (event) => {
     setForm({ ...form, [event.target.id]: event.target.value })
@@ -98,7 +101,7 @@ const Profile = ({ user, authenticated }) => {
     <div>
       <div className="flip-container">
         <section className="container-grid flipper">
-          {products.map((product, index) => (
+          {products.map((product) => (
             <div key={product.id}>
               <h2>{product.name}</h2>
               <img src={product.image} alt={product.name} className="img" />
