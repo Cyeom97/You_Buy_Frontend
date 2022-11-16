@@ -107,54 +107,6 @@ const Profile = ({ user, authenticated }) => {
               <button id={product.id} value={product.id} onClick={handleClick}>
                 Edit
               </button>
-              <div>
-                {/* <form
-                  onSubmit={() => handleUpdate(product.id)}
-                  className="form-type back"
-                >
-                  <label htmlFor="name">Name:</label>
-                  <input
-                    id="name"
-                    name="name"
-                    value={updateAProduct.name}
-                    onChange={(event) => updateChange(event, index)}
-                  ></input>
-                  <label htmlFor="image">Image URL:</label>
-                  <input
-                    id="image"
-                    value={updateAProduct.image}
-                    onChange={(event) => updateChange(event, index)}
-                  ></input>
-                  <label htmlFor="description">Description:</label>
-                  <textarea
-                    id="description"
-                    value={updateAProduct.description}
-                    onChange={(event) => updateChange(event, index)}
-                  ></textarea>
-                  <label htmlFor="price">Price:</label>
-                  <input
-                    id="price"
-                    value={updateAProduct.price}
-                    onChange={(event) => updateChange(event, index)}
-                  ></input>
-                  <button
-                    id={product.id}
-                    type="submit"
-                    value={product.id}
-                    onClick={handleClick1}
-                  >
-                    Update Product
-                  </button>
-                  <button
-                    id={product.id}
-                    type="submit"
-                    value={product.id}
-                    onClick={handleClick2}
-                  >
-                    Delete Product
-                  </button>
-                </form> */}
-              </div>
             </div>
           ))}
         </section>
