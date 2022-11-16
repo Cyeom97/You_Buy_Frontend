@@ -26,11 +26,9 @@ const Profile = ({ user, authenticated }) => {
   }, [id])
 
   useEffect(() => {
-    let productList = products?.map((product) => {
-      product?.Comments.map((comment) => {
-        console.log(comment.name)
-      })
-    })
+    const productList = products?.map((product) => ({
+      data: product.Comments
+    }))
     setComments(productList)
   }, [])
 
