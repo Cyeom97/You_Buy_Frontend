@@ -5,7 +5,7 @@ import Client from '../services/api'
 const Profile = ({ user, authenticated }) => {
   let { id } = useParams()
   const [products, setProducts] = useState([])
-  const [deleted, setDeleted] = useState({})
+  const [deleted, setDeleted] = useState()
   const [updateAProduct, setUpdateAProduct] = useState({})
   const [comments, setComments] = useState([])
   const [form, setForm] = useState({
@@ -63,12 +63,9 @@ const Profile = ({ user, authenticated }) => {
       ...updateAProduct,
       saleId: parseInt(event.currentTarget.id)
     })
-    setDeleted({ saleId: parseInt(event.currentTarget.id) })
   }
 
   const handleClick1 = (event) => {
-    console.log(Headers)
-    console.log(event.currentTarget.id)
     setUpdateAProduct({
       ...updateAProduct,
       [event.target.id]: event.currentTarget.id
@@ -77,7 +74,10 @@ const Profile = ({ user, authenticated }) => {
   }
   const handleClick2 = (event) => {
     event.preventDefault()
-    handleDelete()
+    setDeleted(event.currentTarget.id)
+    if (deleted) {
+      handleDelete()
+    }
   }
 
   const handleUpdate = async (event) => {
@@ -94,9 +94,10 @@ const Profile = ({ user, authenticated }) => {
   }
 
   const handleDelete = async () => {
-    console.log(Headers)
-    let deleteProduct = await Client.delete(`profile`, deleted)
-    setProducts([products, deleteProduct.data])
+    let response = await Client.delete(`profile/${deleted}`)
+    const data = await response.data
+    setProducts([products, data])
+    console.log(response)
   }
 
   return user && authenticated ? (
@@ -112,6 +113,15 @@ const Profile = ({ user, authenticated }) => {
               <button id={product.id} value={product.id} onClick={handleClick}>
                 Edit
               </button>
+              <form onSubmit={handleDelete}>
+                <button
+                  id={product.id}
+                  value={product.id}
+                  onClick={handleClick2}
+                >
+                  Delete Product
+                </button>
+              </form>
             </div>
           ))}
         </section>
@@ -142,7 +152,6 @@ const Profile = ({ user, authenticated }) => {
             onChange={updateChange}
           ></input>
           <button onClick={handleClick1}>Update Product</button>
-          <button onClick={handleClick2}>Delete Product</button>
         </form>
       </div>
       <form onSubmit={handleSubmit} className="form-type">
