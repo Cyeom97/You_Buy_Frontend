@@ -116,7 +116,7 @@ h1, p {
   width: 25%;
 }
 
-.item-list {
+/* .item-list {
 display: flex;
 justify-content: space-around;
 
@@ -124,7 +124,7 @@ justify-content: space-around;
 
 .item-list div h3 {
 margin-left: -70px;
-}
+} */
 
 .welcome-signin {
   display: flex;
@@ -142,3 +142,4 @@ margin-left: -70px;
   padding: 5px 10px;
   margin: auto 1em
 }
+
