@@ -38,7 +38,7 @@ const Home = () => {
                 viewProduct(post.id)
               }}
             ></img>
-            <h3> {post.description} </h3>
+            <h3> {post?.description} </h3>
           </div>
         ))}
       </section>
