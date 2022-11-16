@@ -28,13 +28,6 @@ const Profile = ({ user, authenticated }) => {
     handleUser()
   }, [id])
 
-  // useEffect(() => {
-  //   const productList = products?.map((product) => ({
-  //     data: product.Comments
-  //   }))
-  //   setComments(productList)
-  //   console.log(productList)
-  // }, [products])
   useEffect(() => {
     const handleUser = async () => {
       let productResponse = await Client.get(`comments`)
