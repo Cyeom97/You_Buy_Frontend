@@ -25,6 +25,7 @@ const Home = () => {
   }
   const pickCategory = (category) => {
     setCategory(category)
+    navigate(`/categories/${category}`)
   }
   return (
     <div className="homepage">
@@ -50,40 +51,39 @@ const Home = () => {
       <h1>Categories</h1>
       <h3
         onClick={() => {
-          pickCategory(' Collectible Cards')
+          pickCategory('collectible-cards')
         }}
       >
         Collectible Cards
       </h3>
       <h3
         onClick={() => {
-          pickCategory('Video Games')
+          pickCategory('video-games')
         }}
       >
         Video Games
       </h3>
       <h3
         onClick={() => {
-          pickCategory('Comics')
+          pickCategory('comics')
         }}
       >
         Comics
       </h3>
       <h3
         onClick={() => {
-          pickCategory('Tech')
+          pickCategory('tech')
         }}
       >
         Tech
       </h3>
       <h3
         onClick={() => {
-          pickCategory('Sports')
+          pickCategory('sports')
         }}
       >
         Sports
       </h3>
-      <Category product={posts} category={category} />
       <section className="welcome-signin">
         <button onClick={() => navigate('/signin')}>
           Click Here To Get Started
