@@ -183,11 +183,11 @@ const Profile = ({ user, authenticated }) => {
         <label htmlFor="category">Category:</label>
         <select id="category" value={form.category} onChange={handleChange}>
           <option>-SELECT CATEGORY-</option>
-          <option value="Comics">Comics</option>
-          <option value="Collectable Cards">Collectable Cards</option>
-          <option value="Video Games">Video Games</option>
-          <option value="Tech">Tech</option>
-          <option value="Sports">Sports</option>
+          <option value="comics">Comics</option>
+          <option value="collectible-cards">Collectible Cards</option>
+          <option value="video-games">Video Games</option>
+          <option value="tech">Tech</option>
+          <option value="sports">Sports</option>
         </select>
         <label htmlFor="price">Price:</label>
         <input id="price" value={form.price} onChange={handleChange}></input>
