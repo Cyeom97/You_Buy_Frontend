@@ -6,6 +6,7 @@ import SignIn from './pages/SignIn'
 import Home from './pages/Home'
 import Profile from './pages/Profile'
 import Product from './pages/Product'
+import Category from './pages/Category'
 import './App.css'
 import { CheckSession } from './services/Auth'
 
@@ -44,6 +45,7 @@ function App() {
         <Routes>
           <Route path="/products" element={<Home />} />
           <Route path="/products/:id" element={<Product />} />
+          <Route path="/category" element={<Category />} />
           <Route
             path="/Signin"
             element={
