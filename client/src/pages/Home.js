@@ -29,7 +29,7 @@ const Home = () => {
           <div key={post.id}>
             <h2>{post.name}</h2>
             <img
-              style={{ display: 'block', border: 'solid' }}
+              style={{ border: 'solid' }}
               width="130px"
               height="130px"
               src={post.image}
