@@ -84,6 +84,20 @@ const Home = () => {
       >
         Sports
       </h3>
+      <h3
+        onClick={() => {
+          pickCategory('toys')
+        }}
+      >
+        Toys
+      </h3>
+      <h3
+        onClick={() => {
+          pickCategory('shoes')
+        }}
+      >
+        Shoes
+      </h3>
       <section className="welcome-signin">
         <button onClick={() => navigate('/signin')}>
           Click Here To Get Started
