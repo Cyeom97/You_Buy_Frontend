@@ -23,14 +23,24 @@ const Profile = ({ user, authenticated }) => {
       let productResponse = await Client.get(`profile/${id}`)
       setProducts(productResponse.data)
     }
+
     handleUser()
   }, [id])
 
+  // useEffect(() => {
+  //   const productList = products?.map((product) => ({
+  //     data: product.Comments
+  //   }))
+  //   setComments(productList)
+  //   console.log(productList)
+  // }, [products])
   useEffect(() => {
-    const productList = products?.map((product) => ({
-      data: product.Comments
-    }))
-    setComments(productList)
+    const handleUser = async () => {
+      let productResponse = await Client.get(`comments`)
+      setComments(productResponse.data)
+    }
+
+    handleUser()
   }, [])
 
   const handleChange = (event) => {
@@ -122,6 +132,19 @@ const Profile = ({ user, authenticated }) => {
               </form>
             </div>
           ))}
+          <div>
+            {comments.map((comment) =>
+              comment.review.ownerId === user.id ? (
+                <div>
+                  <h3>{comment.review.name}</h3>
+                  <h3>{comment.name}</h3>
+                  <h3>{comment.description}</h3>
+                </div>
+              ) : (
+                <div></div>
+              )
+            )}
+          </div>
         </section>
         <form onSubmit={handleUpdate} className="form-type back">
           <label htmlFor="name">Name:</label>
