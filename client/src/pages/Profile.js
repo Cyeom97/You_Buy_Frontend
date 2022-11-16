@@ -13,6 +13,7 @@ const Profile = ({ user, authenticated }) => {
     description: '',
     image: '',
     price: '',
+    category: '',
     ownerId: parseInt(id)
   })
 
@@ -62,7 +63,7 @@ const Profile = ({ user, authenticated }) => {
     })
     let newProduct = await Client.post(`profile/${id}`, form)
     setProducts([...products, newProduct.data])
-    setForm({ name: '', description: '', image: '', price: '' })
+    setForm({ name: '', description: '', image: '', price: '', category: '' })
   }
 
   const handleClick = (event) => {
@@ -186,6 +187,15 @@ const Profile = ({ user, authenticated }) => {
           value={form.description}
           onChange={handleChange}
         ></input>
+        <label htmlFor="category">Category:</label>
+        <select id="category" value={form.category} onChange={handleChange}>
+          <option>-SELECT CATEGORY-</option>
+          <option value="Comics">Comics</option>
+          <option value="Collectable Cards">Collectable Cards</option>
+          <option value="Video Games">Video Games</option>
+          <option value="Tech">Tech</option>
+          <option value="Sports">Sports</option>
+        </select>
         <label htmlFor="price">Price:</label>
         <input id="price" value={form.price} onChange={handleChange}></input>
         <button type="submit">Add Product</button>
