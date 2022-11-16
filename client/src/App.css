@@ -116,15 +116,14 @@ h1, p {
   width: 25%;
 }
 
-.item-list {
-display: flex;
+.item-list div {
+display: inline-block;
 justify-content: space-around;
-
+margin: 35px;
+background-color: aliceblue;
 }
 
-.item-list div h3 {
-margin-left: -70px;
-}
+
 
 .welcome-signin {
   display: flex;
