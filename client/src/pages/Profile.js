@@ -5,6 +5,7 @@ import Client from '../services/api'
 const Profile = ({ user, authenticated }) => {
   let { id } = useParams()
   const [products, setProducts] = useState([])
+  const [deleted, setDeleted] = useState({})
   const [updateAProduct, setUpdateAProduct] = useState({})
   const [comments, setComments] = useState([])
   const [form, setForm] = useState({
@@ -62,6 +63,7 @@ const Profile = ({ user, authenticated }) => {
       ...updateAProduct,
       saleId: parseInt(event.currentTarget.id)
     })
+    setDeleted({ saleId: parseInt(event.currentTarget.id) })
   }
 
   const handleClick1 = (event) => {
@@ -93,7 +95,7 @@ const Profile = ({ user, authenticated }) => {
 
   const handleDelete = async () => {
     console.log(Headers)
-    let deleteProduct = await Client.delete(`profile/${id}`, updateAProduct)
+    let deleteProduct = await Client.delete(`profile`, deleted)
     setProducts([products, deleteProduct.data])
   }
 
