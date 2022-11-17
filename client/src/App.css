@@ -333,3 +333,14 @@ border-radius: 2em;
 .comDescr {
   font-weight: normal;
 }
+
+.category-list {
+  margin: 20px;
+  box-shadow: 4px 4px 20px rgba(0,0,0,0.2);
+border-radius: 2em;
+border: 1px solid white;
+width: 25pc;
+padding: 1em;
+background-color: transparent;
+display: inline-flexbox;
+}
