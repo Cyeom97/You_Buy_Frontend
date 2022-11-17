@@ -21,9 +21,14 @@ const Category = () => {
       <h1>{value.toUpperCase()}</h1>
       {products.map((product) =>
         value === product.category.toLowerCase() ? (
-          <div>
+          <div className="category-list">
             <h3>{product.name}</h3>
-            <img src={product.image} alt={product.name} id="ride-image" />
+            <img
+              width="200px"
+              src={product.image}
+              alt={product.name}
+              id="ride-image"
+            />
           </div>
         ) : (
           <div></div>
