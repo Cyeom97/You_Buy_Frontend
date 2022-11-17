@@ -119,7 +119,6 @@ const Profile = ({ user, authenticated }) => {
     let response = await Client.delete(`profile/${deleted}`)
     const data = await response.data
     setProducts([products, data])
-    console.log(response)
     setDeleted('')
   }
 
