@@ -282,7 +282,6 @@ const Profile = ({ user, authenticated }) => {
         <input id="price" value={form.price} onChange={handleChange}></input>
         <button type="submit">Add Product</button>
       </form>
->>>>>>> 2544ef337ff4b00fa36cd585038a1018f482f2e8
     </div>
   ) : (
     <div>
