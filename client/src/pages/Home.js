@@ -13,7 +13,6 @@ const Home = () => {
   useEffect(() => {
     const apiCall = async () => {
       let response = await axios.get(`${BASE_URL}products`)
-      console.log(response)
       setPosts(response.data)
     }
     apiCall()
