@@ -185,6 +185,9 @@ const Profile = ({ user, authenticated }) => {
               key={product.id}
             >
               <img src={product.image} alt={product.name} className="imgP" />
+              <h2 className="products">{product.name}</h2>
+              <h3 className="products">{product.description}</h3>
+              <h3 className="products">{product.price}</h3>
               <button
                 className={display}
                 id={product.id}
@@ -202,9 +205,6 @@ const Profile = ({ user, authenticated }) => {
                 >
                   Delete Product
                 </button>
-                <h2>{product.name}</h2>
-                <h3>{product.description}</h3>
-                <h3>{product.price}</h3>
               </form>
             </div>
           ))}
