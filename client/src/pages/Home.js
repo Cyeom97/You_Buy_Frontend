@@ -30,9 +30,9 @@ const Home = () => {
     <div className="homepage">
       <h1>Our Latest Selection!</h1>
       <div className="items">
-        <section className="item-list">
+        <section>
           {posts.map((post) => (
-            <div key={post.id}>
+            <div key={post.id} className="item-list">
               <h2>{post.name}</h2>
               <img
                 src={post.image}

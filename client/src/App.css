@@ -152,10 +152,13 @@ h1, p {
   width: 8em;
   border-radius: 50%;
 }
-.item-list div{
-display: grid;
-border: 1px solid white;
+.items{
+  display: grid;
+}
+.item-list{
+border: 1px solid black;
 width: 30%;
+margin: 1em;
 padding: 1em;
 justify-content: space-around;
 background-color: transparent;
