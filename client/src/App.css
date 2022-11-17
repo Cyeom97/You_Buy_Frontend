@@ -145,11 +145,14 @@ h1, p {
   margin: 1.5em;
   text-align: center;
 }
+.imgC:hover {
+  border: 1px solid silver;
+}
 .imgC {
   width: 8em;
   border-radius: 50%;
 }
-.item-list div {
+.item-list div{
 display: grid;
 border: 1px solid white;
 width: 30%;
@@ -158,6 +161,10 @@ justify-content: space-around;
 background-color: transparent;
 box-shadow: 4px 4px 20px rgba(0,0,0,0.2);
 border-radius: 2em;
+}
+
+.item-list div:hover {
+  border: 1px solid silver;
 }
 
 .product-image {
