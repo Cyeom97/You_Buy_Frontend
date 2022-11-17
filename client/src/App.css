@@ -156,7 +156,7 @@ h1, p {
   display: grid;
 }
 .item-list{
-border: 1px solid black;
+border: transparent;
 width: 30%;
 margin: 1em;
 padding: 1em;
@@ -166,7 +166,7 @@ box-shadow: 4px 4px 20px rgba(0,0,0,0.2);
 border-radius: 2em;
 }
 
-.item-list div:hover {
+.item-list:hover {
   border: 1px solid silver;
 }
 
