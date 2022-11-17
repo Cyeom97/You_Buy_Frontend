@@ -135,8 +135,8 @@ h1, p {
   padding: .7em;
   width: 25%;
 }
-.regButton:hover, .input-add1:hover {
-  background-color: red;
+.regButton:hover, .input-add1:hover, .displayed:hover {
+  background-color: #f49729;
 }
 
 /* home page styling */
@@ -342,12 +342,12 @@ border-radius: 2em;
 .category-list {
   margin: 20px;
   box-shadow: 4px 4px 20px rgba(0,0,0,0.2);
-border-radius: 2em;
-border: 1px solid white;
-width: 25pc;
-padding: 1em;
-background-color: transparent;
-display: inline-flexbox;
+  border-radius: 2em;
+  border: 1px solid white;
+  width: 25pc;
+  padding: 1em;
+  background-color: transparent;
+  display: inline-flexbox;
 }
 .form-type {
   display: grid;
