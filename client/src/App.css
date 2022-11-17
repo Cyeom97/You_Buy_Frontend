@@ -351,3 +351,26 @@ padding: 1em;
 background-color: transparent;
 display: inline-flexbox;
 }
+.form-type {
+  display: grid;
+  background: white;
+  padding: 35px;
+  margin: 30px;
+  height: 90%;
+  border-radius: 20px;
+  border-left: 1px solid white;
+  border-top: 1px solid white;
+  box-shadow: 20px 20px 40px 10px rgba(0,0,0,0.2);
+  text-align: center;
+}
+.form-type label {
+  margin-top: 15px;
+}
+
+.view-product h3, h2 {
+font-style: oblique;
+margin-left: 40px;
+}
+.form-type h3 {
+  margin-left: -6px;
+}
