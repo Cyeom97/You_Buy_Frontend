@@ -256,32 +256,6 @@ const Profile = ({ user, authenticated }) => {
           </form>
         </div>
       </div>
-<<<<<<< HEAD
-=======
-      <form onSubmit={handleSubmit} className="form-type">
-        <label htmlFor="name">Name:</label>
-        <input id="name" value={form.name} onChange={handleChange}></input>
-        <label htmlFor="image">Image URL:</label>
-        <input id="image" value={form.image} onChange={handleChange}></input>
-        <label htmlFor="description">Description:</label>
-        <input
-          id="description"
-          value={form.description}
-          onChange={handleChange}
-        ></input>
-        <label htmlFor="category">Category:</label>
-        <select id="category" value={form.category} onChange={handleChange}>
-          <option>-SELECT CATEGORY-</option>
-          <option value="Comics">Comics</option>
-          <option value="Collectible Cards">Collectible Cards</option>
-          <option value="Video Games">Video Games</option>
-          <option value="Tech">Tech</option>
-          <option value="Sports">Sports</option>
-        </select>
-        <label htmlFor="price">Price:</label>
-        <input id="price" value={form.price} onChange={handleChange}></input>
-        <button type="submit">Add Product</button>
-      </form>
     </div>
   ) : (
     <div>
