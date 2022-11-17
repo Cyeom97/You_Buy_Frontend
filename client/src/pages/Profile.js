@@ -42,6 +42,7 @@ const Profile = ({ user, authenticated }) => {
       let productResponse = await Client.get(`profile/${id}`)
       setProducts(productResponse.data)
     }
+    console.log('i run')
 
     handleUser()
   }, [id])
@@ -105,7 +106,8 @@ const Profile = ({ user, authenticated }) => {
   const handleUpdate = async (event) => {
     event.preventDefault()
     let updateProduct = await Client.put(`profile/${id}`, updateAProduct)
-    setProducts([products, updateProduct.data])
+    console.log(updateProduct)
+    // setProducts([products, updateProduct.data])
     setUpdateAProduct({
       name: '',
       description: '',

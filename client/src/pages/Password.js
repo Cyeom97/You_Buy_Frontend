@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { SignInUser } from '../services/Auth'
+import { UpdateUserPassword } from '../services/Auth'
 import { Link } from 'react-router-dom'
 
-const SignIn = (props) => {
+const ResetPassword = (props) => {
   const [formValues, setFormValues] = useState({ email: '', password: '' })
 
   let navigate = useNavigate()
@@ -14,7 +14,7 @@ const SignIn = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const payload = await SignInUser(formValues)
+    const payload = await UpdateUserPassword(formValues)
     setFormValues({ email: '', password: '' })
     props.setUser(payload)
     props.toggleAuthenticated(true)
@@ -25,7 +25,7 @@ const SignIn = (props) => {
     <div>
       <h1>Hello</h1>
       <p>
-        Sign in to your YouBuy account or{' '}
+        Reset the Password for your YouBuy account or{' '}
         <Link to="/Register">create an account</Link>
       </p>
       <div className="sign">
@@ -47,7 +47,7 @@ const SignIn = (props) => {
               onChange={handleChange}
               type="password"
               name="password"
-              placeholder="Password"
+              placeholder="New Password"
               value={formValues.password}
               required
             />
@@ -57,16 +57,13 @@ const SignIn = (props) => {
               className="regButton"
               disabled={!formValues.email || !formValues.password}
             >
-              Sign In
+              Reset
             </button>
           </div>
-          <a className="input-wrapper" href="/update">
-            Reset Password
-          </a>
         </form>
       </div>
     </div>
   )
 }
 
-export default SignIn
+export default ResetPassword
