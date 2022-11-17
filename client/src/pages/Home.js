@@ -31,15 +31,17 @@ const Home = () => {
       <div className="items">
         <section className="item-list">
           {posts.map((post) => (
-            <div key={post.id}>
+            <div
+              key={post.id}
+              onClick={() => {
+                viewProduct(post.id)
+              }}
+            >
               <h2>{post.name}</h2>
               <img
                 src={post.image}
                 className="product-image"
                 alt="Product"
-                onClick={() => {
-                  viewProduct(post.id)
-                }}
               ></img>
               <h3> {post?.description} </h3>
             </div>
