@@ -216,6 +216,7 @@ border-radius: 2em;
 
 .input-add {
   margin: 1em;
+  padding: 5px;
   background: transparent;
   border: none;
   border-bottom: 1px solid #000000;
@@ -371,3 +372,4 @@ margin-left: 40px;
 .form-type h3 {
   margin-left: -6px;
 }
+
