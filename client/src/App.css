@@ -1,6 +1,9 @@
+body {
+  font-family:  Helvetica;
+}
 .navbar {
   height: 9em;
-  background-color: rgba(120, 120, 120, 0.95);
+  background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 4px 4px 60px rgba(0,0,0,.5);
 }
 .sticky-header {
@@ -18,7 +21,7 @@
 .links {
   display: flex;
   overflow: hidden;
-  background-color: rgba(120,120,120,.9);
+  background-color: rgba(255,255,255,.98);
   margin-bottom: 1em;
   justify-content: end;
   font-size: larger;
@@ -44,7 +47,7 @@
   border: none;
   outline: none;
   color: black;
-  background-color: rgba(120,120,120,.1);
+  background-color: rgba(255,255,255,.1);
   font-family: inherit; 
   margin-right: 3%;
   margin-left: 1em;
@@ -280,4 +283,31 @@ flex-flow: row;
     box-shadow: 4px 4px 60px rgba(0,0,0,0.2);
     color: black;
     font-weight: 500;
+}
+
+.comment-container {
+  border: 2px solid black;
+  margin: 1em;
+  height: 250px;
+  overflow-y: auto;
+}
+.comments {
+  border-bottom: 1px solid black;
+  padding: 1em;
+  height: 80px;
+  overflow-y: auto;
+}
+
+.comTitle {
+  font-size: 120%;
+  font-weight: normal;
+  
+}
+
+.comName {
+  font-size: 200%;
+  font-weight: 300px;
+}
+.comDescr {
+  font-weight: normal;
 }

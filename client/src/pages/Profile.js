@@ -204,13 +204,16 @@ const Profile = ({ user, authenticated }) => {
               </form>
             </div>
           ))}
-          <div>
+          <h1 className="messages">Messages</h1>
+          <div className="comment-container">
             {comments.map((comment) =>
               comment.review.ownerId === user.id ? (
-                <div>
-                  <h3>{comment.review.name}</h3>
-                  <h3>{comment.name}</h3>
-                  <h3>{comment.description}</h3>
+                <div className="comments">
+                  <h3 className="comName">{comment.name}</h3>
+                  <h3 className="comTitle">
+                    Subject: Interested in {comment.review.name}
+                  </h3>
+                  <h3 className="comDescr">{comment.description}</h3>
                 </div>
               ) : (
                 <div></div>
