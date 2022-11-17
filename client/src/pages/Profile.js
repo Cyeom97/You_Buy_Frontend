@@ -42,9 +42,12 @@ const Profile = ({ user, authenticated }) => {
       let productResponse = await Client.get(`profile/${id}`)
       setProducts(productResponse.data)
     }
-    console.log('i run')
-
     handleUser()
+    // const interval = setInterval(() => {
+    //   handleUser()
+    // }, 10000)
+
+    // return () => clearInterval(interval)
   }, [id])
 
   useEffect(() => {
@@ -107,7 +110,7 @@ const Profile = ({ user, authenticated }) => {
     event.preventDefault()
     let updateProduct = await Client.put(`profile/${id}`, updateAProduct)
     console.log(updateProduct)
-    // setProducts([products, updateProduct.data])
+    setProducts([products, updateProduct.data])
     setUpdateAProduct({
       name: '',
       description: '',
