@@ -133,13 +133,35 @@ h1, p {
   background-color: red;
 }
 
+/* home page styling */
 
+.categories {
+  display: flex; 
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 4em 1em 0 1em;
+}
+.category {
+  margin: 1.5em;
+  text-align: center;
+}
+.imgC {
+  width: 8em;
+  border-radius: 50%;
+}
 .item-list div {
-display: inline-block;
+display: grid;
+border: 1px solid white;
+width: 30%;
+padding: 1em;
 justify-content: space-around;
-margin: 35px;
-background-color: aliceblue;
-flex-flow: row;
+background-color: transparent;
+box-shadow: 4px 4px 20px rgba(0,0,0,0.2);
+border-radius: 2em;
+}
+
+.product-image {
+  width: 30%;
 }
 
 .welcome-signin {
