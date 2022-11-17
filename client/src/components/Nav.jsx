@@ -13,8 +13,8 @@ if (user) {
         <div className="dropdown-content">
         <h3 className="drop">Welcome</h3>
         <p className="drop">{user.email}</p>
-        <Link to="/auth/update">Update</Link>
-        <p onClick={() => navigate(-1)}>Back</p>
+        <Link className="update" to="/auth/update">Update</Link>
+        <p className="update" onClick={() => navigate(-1)}>Back</p>
         </div>
       </div>
       <Link to="/products">Home</Link>
