@@ -43,11 +43,6 @@ const Profile = ({ user, authenticated }) => {
       setProducts(productResponse.data)
     }
     handleUser()
-    // const interval = setInterval(() => {
-    //   handleUser()
-    // }, 10000)
-
-    // return () => clearInterval(interval)
   }, [id])
 
   useEffect(() => {
