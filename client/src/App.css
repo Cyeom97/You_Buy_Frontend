@@ -1,6 +1,15 @@
+body {
+  font-family:  Helvetica;
+}
 .navbar {
   height: 9em;
-  background-color: lightslategray;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 4px 4px 60px rgba(0,0,0,.5);
+}
+.sticky-header {
+  position: sticky;
+  z-index: 1;
+  top: 0;
 }
 .logo {
   display: flex;
@@ -12,8 +21,8 @@
 .links {
   display: flex;
   overflow: hidden;
-  background-color: lightslategray;
-  margin-bottom: 5em;
+  background-color: rgba(255,255,255,.98);
+  margin-bottom: 1em;
   justify-content: end;
   font-size: larger;
 }
@@ -38,7 +47,7 @@
   border: none;
   outline: none;
   color: black;
-  background-color: inherit;
+  background-color: rgba(255,255,255,.1);
   font-family: inherit; 
   margin-right: 3%;
   margin-left: 1em;
@@ -120,20 +129,40 @@ h1, p {
   padding: .7em;
   width: 25%;
 }
-.regButton:hover {
+.regButton:hover, .input-add1:hover {
   background-color: red;
 }
 
+/* home page styling */
 
+.categories {
+  display: flex; 
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 4em 1em 0 1em;
+}
+.category {
+  margin: 1.5em;
+  text-align: center;
+}
+.imgC {
+  width: 8em;
+  border-radius: 50%;
+}
 .item-list div {
-display: inline-block;
+display: grid;
+border: 1px solid white;
+width: 30%;
+padding: 1em;
 justify-content: space-around;
-margin: 35px;
-background-color: aliceblue;
-flex-flow: row;
+background-color: transparent;
+box-shadow: 4px 4px 20px rgba(0,0,0,0.2);
+border-radius: 2em;
 }
 
-
+.product-image {
+  width: 30%;
+}
 
 .welcome-signin {
   display: flex;
@@ -152,3 +181,155 @@ flex-flow: row;
   margin: auto 1em
 }
 
+/* profile css */
+.notdisplayed {
+  display: none;
+}
+
+.displayed {
+  display: block;
+  height: 20px;
+  width: 30%;
+  background: silver;
+  margin-left: 2em;
+  border: none;
+  border-left: 1px solid white;
+  border-top: 1px solid white;
+  border-radius: 5000px;
+  box-shadow: 4px 4px 20px rgba(0,0,0,0.2);
+  color: black;
+  font-weight: 500;
+}
+
+.form-add {
+  margin: 1em;
+  border: 1px solid white;
+  justify-content: center;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 20px 20px 10px 20px rgba(0,0,0,0);
+}
+
+.input-add {
+  margin: 1em;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+}
+.input-add1 {
+  background: silver;
+  width: 10%;
+  padding: 1em;
+  margin: 0 0 2em 3.5em;
+  border: none;
+  border-left: 1px solid white;
+  border-top: 1px solid white;
+  border-radius: 5000px;
+  box-shadow: 4px 4px 60px rgba(0,0,0,0.2);
+  color: black;
+  font-weight: 500;
+}
+.containerP {
+  display: grid;
+  text-align: left;
+  border: 1px solid white;
+  box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
+  width: 40%;
+  padding: 1em;
+  margin: 3em 0 1em 3em;
+  border-radius: 30px;
+}
+.imgP {
+  width: 30em;
+  height: auto;
+  border-radius: 30px;
+}
+
+.form-container  {
+  position: absolute;
+  width: 40%;
+  top: 75%;
+  left: 50%;
+}
+
+.form-update {
+  display: grid;
+  background: white;
+  padding: 3em;
+  margin: 1em;
+  height: 90%;
+  border-radius: 20px;
+  border-left: 1px solid white;
+  border-top: 1px solid white;
+  box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
+  text-align: center;
+  position: relative;
+}
+
+.title {
+  font-weight: 500;
+    color: black;
+    opacity: 0.7;
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 60px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  }
+
+  
+.form-fields {
+  background: transparent;
+  justify-items: center;
+  text-align: center;
+  width: 90%;
+  padding: 1em;
+  margin-bottom: 1em;
+  border: none;
+  border-left: 1px solid white;
+  border-top: 1px solid white;
+  border-radius: 5000px;
+  box-shadow: 4px 4px 20px rgba(0,0,0,0.2);
+  color: black;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  }
+.updateButton {
+    background: silver;
+    width: 75%;
+    padding: 1em;
+    margin: 0 0 2em 3.5em;
+    border: none;
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+    border-radius: 5000px;
+    box-shadow: 4px 4px 60px rgba(0,0,0,0.2);
+    color: black;
+    font-weight: 500;
+}
+
+.comment-container {
+  border: 2px solid black;
+  margin: 1em;
+  height: 250px;
+  overflow-y: auto;
+}
+.comments {
+  border-bottom: 1px solid black;
+  padding: 1em;
+  height: 80px;
+  overflow-y: auto;
+}
+
+.comTitle {
+  font-size: 120%;
+  font-weight: normal;
+  
+}
+
+.comName {
+  font-size: 200%;
+  font-weight: 300px;
+}
+.comDescr {
+  font-weight: normal;
+}
