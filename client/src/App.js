@@ -9,6 +9,7 @@ import Product from './pages/Product'
 import Category from './pages/Category'
 import './App.css'
 import { CheckSession } from './services/Auth'
+import ResetPassword from './pages/Password'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -50,6 +51,15 @@ function App() {
             path="/Signin"
             element={
               <SignIn
+                setUser={setUser}
+                toggleAuthenticated={toggleAuthenticated}
+              />
+            }
+          />
+          <Route
+            path="/update"
+            element={
+              <ResetPassword
                 setUser={setUser}
                 toggleAuthenticated={toggleAuthenticated}
               />

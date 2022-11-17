@@ -42,8 +42,12 @@ const Profile = ({ user, authenticated }) => {
       let productResponse = await Client.get(`profile/${id}`)
       setProducts(productResponse.data)
     }
-
     handleUser()
+    // const interval = setInterval(() => {
+    //   handleUser()
+    // }, 10000)
+
+    // return () => clearInterval(interval)
   }, [id])
 
   useEffect(() => {
@@ -105,6 +109,7 @@ const Profile = ({ user, authenticated }) => {
   const handleUpdate = async (event) => {
     event.preventDefault()
     let updateProduct = await Client.put(`profile/${id}`, updateAProduct)
+    console.log(updateProduct)
     setProducts([products, updateProduct.data])
     setUpdateAProduct({
       name: '',
@@ -180,6 +185,9 @@ const Profile = ({ user, authenticated }) => {
               key={product.id}
             >
               <img src={product.image} alt={product.name} className="imgP" />
+              <h2 className="products">{product.name}</h2>
+              <h3 className="products">{product.description}</h3>
+              <h3 className="products">{product.price}</h3>
               <button
                 className={display}
                 id={product.id}
@@ -197,9 +205,6 @@ const Profile = ({ user, authenticated }) => {
                 >
                   Delete Product
                 </button>
-                <h2>{product.name}</h2>
-                <h3>{product.description}</h3>
-                <h3>{product.price}</h3>
               </form>
             </div>
           ))}
@@ -207,7 +212,7 @@ const Profile = ({ user, authenticated }) => {
           <div className="comment-container">
             {comments.map((comment) =>
               comment.review.ownerId === user.id ? (
-                <div className="comments">
+                <div className="comments" key={comment.id}>
                   <h3 className="comName">{comment.name}</h3>
                   <h3 className="comTitle">
                     Subject: Interested in {comment.review.name}
