@@ -134,15 +134,13 @@ h1, p {
 }
 
 /* home page styling */
-
 .categories {
-  display: flex; 
-  justify-content: space-between;
-  flex-direction: row;
-  margin: 4em 1em 0 1em;
+  margin: 0 0 0 4em;
 }
 .category {
-  margin: 1.5em;
+  display: inline-grid;
+  justify-content: space-between;
+  margin: 4em;
   text-align: center;
 }
 .imgC:hover {
@@ -152,10 +150,15 @@ h1, p {
   width: 8em;
   border-radius: 50%;
 }
-.item-list div{
-display: grid;
-border: 1px solid white;
-width: 30%;
+.items{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-left: 10em;
+}
+.item-list{
+border: transparent;
+width: 60%;
+margin: 1em;
 padding: 1em;
 justify-content: space-around;
 background-color: transparent;
@@ -163,7 +166,7 @@ box-shadow: 4px 4px 20px rgba(0,0,0,0.2);
 border-radius: 2em;
 }
 
-.item-list div:hover {
+.item-list:hover {
   border: 1px solid silver;
 }
 
@@ -255,7 +258,7 @@ border-radius: 2em;
 .form-container  {
   position: absolute;
   width: 40%;
-  top: 75%;
+  top: 50%;
   left: 50%;
 }
 
@@ -264,7 +267,7 @@ border-radius: 2em;
   background: white;
   padding: 3em;
   margin: 1em;
-  height: 90%;
+  height: auto;
   border-radius: 20px;
   border-left: 1px solid white;
   border-top: 1px solid white;
