@@ -27,28 +27,7 @@ const Home = () => {
   }
   return (
     <div className="homepage">
-      <h1>Our Latest Selection!</h1>
-      <div className="items">
-        <section className="item-list">
-          {posts.map((post) => (
-            <div
-              key={post.id}
-              onClick={() => {
-                viewProduct(post.id)
-              }}
-            >
-              <h2>{post.name}</h2>
-              <img
-                src={post.image}
-                className="product-image"
-                alt="Product"
-              ></img>
-              <h3> {post?.description} </h3>
-            </div>
-          ))}
-        </section>
-      </div>
-      <h1>Categories</h1>
+      <h1 className="titleC">Categories</h1>
       <div className="categories">
         <div
           className="category"
@@ -154,6 +133,25 @@ const Home = () => {
             alt="shoes"
           />
           <h3>Shoes</h3>
+        </div>
+        <h1>Our Latest Selection!</h1>
+        <div>
+          <section className="items">
+            {posts.map((post) => (
+              <div key={post.id} className="item-list">
+                <h2>{post.name}</h2>
+                <img
+                  src={post.image}
+                  className="product-image"
+                  alt="Product"
+                  onClick={() => {
+                    viewProduct(post.id)
+                  }}
+                ></img>
+                <h3> {post?.description} </h3>
+              </div>
+            ))}
+          </section>
         </div>
       </div>
     </div>
