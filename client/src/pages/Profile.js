@@ -209,7 +209,7 @@ const Profile = ({ user, authenticated }) => {
           <div className="comment-container">
             {comments.map((comment) =>
               comment.review.ownerId === user.id ? (
-                <div className="comments">
+                <div className="comments" key={comment.id}>
                   <h3 className="comName">{comment.name}</h3>
                   <h3 className="comTitle">
                     Subject: Interested in {comment.review.name}
