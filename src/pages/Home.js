@@ -27,7 +27,7 @@ const Home = () => {
   }
   return (
     <div className="homepage">
-      <h1 className="titleC">Categories</h1>
+      <h1>Categories</h1>
       <div className="categories">
         <div
           className="category"
@@ -120,24 +120,24 @@ const Home = () => {
           />
           <h3>Shoes</h3>
         </div>
-        <h1>Our Latest Selection!</h1>
-        <div>
-          <section className="items">
-            {posts.map((post) => (
-              <div key={post.id} className="item-list">
-                <h2>{post.name}</h2>
-                <img
-                  src={post.image}
-                  className="product-image"
-                  alt="Product"
-                  onClick={() => {
-                    viewProduct(post.id)
-                  }}
-                ></img>
-              </div>
-            ))}
-          </section>
-        </div>
+      </div>
+      <h1>Our Latest Selection!</h1>
+      <div>
+        <section className="items">
+          {posts.map((post) => (
+            <div key={post.id} className="item-list">
+              <h2>{post.name}</h2>
+              <img
+                src={post.image}
+                className="product-image"
+                alt="Product"
+                onClick={() => {
+                  viewProduct(post.id)
+                }}
+              ></img>
+            </div>
+          ))}
+        </section>
       </div>
     </div>
   )
