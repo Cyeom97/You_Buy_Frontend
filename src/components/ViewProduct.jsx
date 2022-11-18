@@ -11,7 +11,7 @@ const ViewProduct =(props)=>{
     <h2>Price: ${props.product.price}</h2>
     <form onSubmit={props.handleSubmit} className='form-comment'>
       <h3>Message Seller</h3>
-      <input id='name' className="form-fields" placeholder="Name" value={props.form.name} onChange={props.handleChange}></input>
+      <input id='name' className="form-fields" placeholder="Email" value={props.form.name} onChange={props.handleChange}></input>
       <textarea id='description' className="form-fields" placeholder="Description" value={props.form.description} onChange={props.handleChange}></textarea>
       <button id='add' className="updateButton" type='submit'>Add Comment</button>
     </form>
