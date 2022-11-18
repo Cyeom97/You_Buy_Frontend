@@ -23,7 +23,7 @@ You will also be able to create a wishlist of items you would like to purchase. 
 
 ### **_Getting Started_**
 
-#### [Heroku Deployment]()
+#### [Heroku Deployment](https://you-buyapp.herokuapp.com/)
 
 #### **_ERD, CHD & Trello_**
 
@@ -118,4 +118,4 @@ We set the main font style in our browser to `Helvetica`. The nav bar's position
 
 ### **_Future Updates_**
 
-Some of the future updates we would like to include consists of a wishlist function which allows users to store products for potential purchases.
+Some of the future updates we would like to include consists of a wishlist function which allows users to store products for potential purchases. Featured items is another functionality we would love to add in the future. It would appear at the top of the homepage and show the featured products for the day. Featured items is another functionality we would love to add in the future. It would appear at the top of the homepage and show the featured products for the day. Stripe functionality would also be added to our website which would allow users to actually purchase items. This would complete our website to allow users to find, contact, and acquire products.
