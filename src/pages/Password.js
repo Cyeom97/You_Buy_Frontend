@@ -7,7 +7,7 @@ const ResetPassword = () => {
   const [formValues, setFormValues] = useState({ email: '', password: '' })
   let navigate = useNavigate()
 
-  //used the reset the users password
+  //used to reset the users password
 
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
