@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom'
 
 const ResetPassword = () => {
   const [formValues, setFormValues] = useState({ email: '', password: '' })
-
   let navigate = useNavigate()
+
+  //used to reset the users password
 
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })

@@ -16,6 +16,8 @@ const GetProduct = () => {
     productId: parseInt(id)
   })
 
+  // gets all products
+
   useEffect(() => {
     const apiCall = async () => {
       const response = await axios.get(`${BASE_URL}products/${id}`)
@@ -24,6 +26,7 @@ const GetProduct = () => {
     apiCall()
   }, [])
 
+  // handles adding comment or "sending message to owner of product"
   const handleChange = (event) => {
     setForm({ ...form, [event.target.id]: event.target.value })
   }

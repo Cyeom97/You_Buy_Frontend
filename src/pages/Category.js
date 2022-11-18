@@ -8,6 +8,8 @@ const Category = () => {
   let navigate = useNavigate()
   const [products, setProducts] = useState([])
 
+  //grabs all products
+
   useEffect(() => {
     const getProducts = async () => {
       const response = await axios.get(`${BASE_URL}products`)
@@ -16,9 +18,13 @@ const Category = () => {
     getProducts()
   }, [])
 
+  //assists with navigating to the selected product
+
   const viewProduct = (posts) => {
     navigate(`/products/${posts}`)
   }
+
+  //used to replace the - in the url to match with the specifc products
 
   const value = category.replace('-', ' ')
   return (

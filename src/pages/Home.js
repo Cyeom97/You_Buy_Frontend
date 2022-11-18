@@ -10,6 +10,8 @@ const Home = () => {
 
   const [category, setCategory] = useState('')
 
+  //gets all products
+
   useEffect(() => {
     const apiCall = async () => {
       let response = await axios.get(`${BASE_URL}products`)
@@ -17,6 +19,8 @@ const Home = () => {
     }
     apiCall()
   }, [])
+
+  //handles navigating to view one product logic
 
   const viewProduct = (posts) => {
     navigate(`products/${posts}`)

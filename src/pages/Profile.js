@@ -10,6 +10,7 @@ const Profile = ({ user, authenticated }) => {
   const [comments, setComments] = useState([])
   const [display, setDisplay] = useState('notdisplayed')
   const [formContainer, setFormContainer] = useState('notdisplayed')
+  let navigate = useNavigate()
   const [form, setForm] = useState({
     name: '',
     description: '',
@@ -18,13 +19,17 @@ const Profile = ({ user, authenticated }) => {
     category: '',
     ownerId: parseInt(id)
   })
+
+  //used to set time interval to help with getting useEffect to run again
+
   const [timeInterval, setTimeInterval] = useState(0)
 
   setTimeout(() => {
     setTimeInterval(timeInterval + 1)
   }, 5000)
 
-  let navigate = useNavigate()
+  //use to help hide and display elements on the page
+
   const showButton = (event) => {
     event.preventDefault()
     setDisplay('displayed')
@@ -42,6 +47,8 @@ const Profile = ({ user, authenticated }) => {
     setFormContainer('notdisplayed')
   }
 
+  //gets the products the user is the owner of
+
   useEffect(() => {
     const handleUser = async () => {
       let productResponse = await Client.get(`profile/${id}`)
@@ -49,6 +56,8 @@ const Profile = ({ user, authenticated }) => {
     }
     handleUser()
   }, [timeInterval])
+
+  // gets comments(communication) from the user who wants to purchase
 
   useEffect(() => {
     const handleUser = async () => {
@@ -58,6 +67,8 @@ const Profile = ({ user, authenticated }) => {
 
     handleUser()
   }, [])
+
+  // handle logic for forms that handle updating, adding and deleting
 
   const handleChange = (event) => {
     setForm({ ...form, [event.target.id]: event.target.value })
