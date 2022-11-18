@@ -30,8 +30,7 @@ const GetProduct = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    let newComment = await axios.post(`${BASE_URL}products/${id}`, form)
-    setSelectedProduct([...selectedProduct, newComment.data])
+    let newComment = await axios.post(`${BASE_URL}comments`, form)
     setForm({ name: '', description: '' })
   }
 
