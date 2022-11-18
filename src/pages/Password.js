@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { UpdateUserPassword } from '../services/Auth'
 import { Link } from 'react-router-dom'
 
-const ResetPassword = (props) => {
+const ResetPassword = () => {
   const [formValues, setFormValues] = useState({ email: '', password: '' })
 
   let navigate = useNavigate()
@@ -16,9 +16,7 @@ const ResetPassword = (props) => {
     e.preventDefault()
     const payload = await UpdateUserPassword(formValues)
     setFormValues({ email: '', password: '' })
-    props.setUser(payload)
-    props.toggleAuthenticated(true)
-    navigate(`/profile/${payload.id}`)
+    navigate(`/signin`)
   }
 
   return (
