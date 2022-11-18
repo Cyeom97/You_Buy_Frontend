@@ -21,6 +21,7 @@ const Profile = ({ user, authenticated }) => {
   })
 
   //used to set time interval to help with getting useEffect to run again
+
   const [timeInterval, setTimeInterval] = useState(0)
 
   setTimeout(() => {
@@ -28,6 +29,7 @@ const Profile = ({ user, authenticated }) => {
   }, 5000)
 
   //use to help hide and display elements on the page
+
   const showButton = (event) => {
     event.preventDefault()
     setDisplay('displayed')
@@ -56,6 +58,7 @@ const Profile = ({ user, authenticated }) => {
   }, [timeInterval])
 
   // gets comments(communication) from the user who wants to purchase
+
   useEffect(() => {
     const handleUser = async () => {
       let productResponse = await Client.get(`comments`)
@@ -66,6 +69,7 @@ const Profile = ({ user, authenticated }) => {
   }, [])
 
   // handle logic for forms that handle updating, adding and deleting
+
   const handleChange = (event) => {
     setForm({ ...form, [event.target.id]: event.target.value })
   }
