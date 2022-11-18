@@ -205,7 +205,7 @@ const Profile = ({ user, authenticated }) => {
               <img src={product.image} alt={product.name} className="imgP" />
               <h2 className="products">{product.name}</h2>
               <h3 className="products">{product.description}</h3>
-              <h3 className="products">{product.price}</h3>
+              <h3 className="products">Price: ${product.price}</h3>
               <button
                 className={display}
                 id={product.id}
