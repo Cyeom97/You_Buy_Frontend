@@ -13,7 +13,7 @@ const ViewProduct =(props)=>{
       <h3>Message Seller</h3>
       <input id='name' className="form-fields" placeholder="Email" value={props.form.name} onChange={props.handleChange}></input>
       <textarea id='description' className="form-fields" placeholder="Description" value={props.form.description} onChange={props.handleChange}></textarea>
-      <button id='add' className="updateButton" type='submit'>Add Comment</button>
+      <button id='add' className="commentButton" type='submit'>Add Comment</button>
     </form>
   </div>
     )

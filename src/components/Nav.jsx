@@ -43,7 +43,6 @@ return (
     <Link to="/">
       <div className="navbar">
       <img className='logo'src={logo} alt="logo" />
-        <img />
       </div>
     </Link>
     {authenticated && user ? authenticatedOptions : publicOptions}

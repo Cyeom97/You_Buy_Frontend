@@ -1,10 +1,10 @@
 body {
   font-family:  Helvetica;
 }
-.navbar {
-  height: 9em;
-  background-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 4px 4px 60px rgba(0,0,0,.5);
+header{
+  height: 14em;
+  background: linear-gradient(to bottom right,#f49729, white );
+  box-shadow: 4px 4px 60px rgba(0,0,0,.5); 
 }
 .sticky-header {
   position: sticky;
@@ -13,7 +13,7 @@ body {
 }
 .logo {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   padding: .5%;
   width: 10em;
   border-radius: 50%;
@@ -21,10 +21,9 @@ body {
 .links {
   display: flex;
   overflow: hidden;
-  background-color: rgba(255,255,255,.98);
   margin-bottom: 1em;
-  justify-content: end;
-  font-size: larger;
+  justify-content: flex-end;
+  font-size: 150%;
 }
 .links a {
   font-size: 135%;
@@ -53,7 +52,7 @@ body {
   border: none;
   outline: none;
   color: black;
-  background-color: rgba(255,255,255,.1);
+  background-color: transparent;
   font-family: inherit; 
   margin-right: 3%;
   margin-left: 1em;
@@ -299,6 +298,7 @@ border-radius: 2em;
   
 .form-fields {
   background: transparent;
+  font-size: 115%;
   width: 90%;
   padding: 1em;
   margin: 1em;
@@ -312,6 +312,18 @@ border-radius: 2em;
     width: 75%;
     padding: 1em;
     margin: 0 0 2em 3.5em;
+    border: none;
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+    border-radius: 5000px;
+    box-shadow: 4px 4px 60px rgba(0,0,0,0.2);
+    color: black;
+    font-weight: 500;
+}
+.commentButton {
+    background: silver;
+    width: 40%;
+    margin: 4em 0 1em 1em;
     border: none;
     border-left: 1px solid white;
     border-top: 1px solid white;
