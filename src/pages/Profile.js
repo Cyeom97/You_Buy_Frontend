@@ -33,6 +33,7 @@ const Profile = ({ user, authenticated }) => {
   const showButton = (event) => {
     event.preventDefault()
     setDisplay('displayed')
+    setDeleted(event.currentTarget.id)
   }
 
   const hideButton = (event) => {
@@ -64,7 +65,6 @@ const Profile = ({ user, authenticated }) => {
       let productResponse = await Client.get(`comments`)
       setComments(productResponse.data)
     }
-
     handleUser()
   }, [])
 
@@ -117,9 +117,10 @@ const Profile = ({ user, authenticated }) => {
   }
   const handleClick2 = (event) => {
     event.preventDefault()
-    setDeleted(event.currentTarget.id)
     if (deleted) {
       handleDelete()
+    } else {
+      console.log('why')
     }
   }
 
@@ -199,6 +200,7 @@ const Profile = ({ user, authenticated }) => {
               onMouseEnter={(event) => showButton(event)}
               onMouseLeave={(event) => hideButton(event)}
               key={product.id}
+              id={product.id}
             >
               <img src={product.image} alt={product.name} className="imgP" />
               <h2 className="products">{product.name}</h2>
@@ -212,16 +214,14 @@ const Profile = ({ user, authenticated }) => {
               >
                 Edit
               </button>
-              <form onSubmit={handleDelete}>
-                <button
-                  className={display}
-                  id={product.id}
-                  value={product.id}
-                  onClick={handleClick2}
-                >
-                  Delete Product
-                </button>
-              </form>
+              <button
+                className={display}
+                id={product.id}
+                value={product.id}
+                onClick={handleClick2}
+              >
+                Delete Product
+              </button>
             </div>
           ))}
           <h1 className="messages">Messages</h1>
