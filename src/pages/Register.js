@@ -35,7 +35,8 @@ const Register = () => {
     <div className="signin col">
       <div className="card-overlay centered">
         <form className="col" onSubmit={handleSubmit}>
-          <h1>Create an Account</h1>
+          <h1>Hello</h1>
+          <p>Create your YouBuy Account below</p>
           <div className="input-wrapper">
             <input
               className="name"

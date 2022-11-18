@@ -22,7 +22,7 @@ export const RegisterUser = async (data) => {
 
 export const UpdateUserPassword = async (data) => {
   try {
-    const res = await Client.post('/auth/update', data)
+    const res = await Client.put('/auth/update', data)
     return res.data
   } catch (error) {
     throw error

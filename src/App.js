@@ -44,7 +44,7 @@ function App() {
       />
       <main>
         <Routes>
-          <Route path="/products" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/products/:id" element={<Product />} />
           <Route path="/categories/:category" element={<Category />} />
           <Route
@@ -56,15 +56,7 @@ function App() {
               />
             }
           />
-          <Route
-            path="/update"
-            element={
-              <ResetPassword
-                setUser={setUser}
-                toggleAuthenticated={toggleAuthenticated}
-              />
-            }
-          />
+          <Route path="/update" element={<ResetPassword />} />
           <Route path="/Register" element={<Register />} />
           <Route
             path="/profile/:id"

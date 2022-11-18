@@ -19,7 +19,7 @@ const Home = () => {
   }, [])
 
   const viewProduct = (posts) => {
-    navigate(`${posts}`)
+    navigate(`products/${posts}`)
   }
   const pickCategory = (category) => {
     setCategory(category)
