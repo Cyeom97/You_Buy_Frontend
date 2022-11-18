@@ -16,8 +16,8 @@ if (user) {
         <p className="update" onClick={() => navigate(-1)}>Back</p>
         </div>
       </div>
-      <Link to="/products">Home</Link>
-      <Link onClick={handleLogout} to="/products">Sign Out</Link>
+      <Link to="/">Home</Link>
+      <Link onClick={handleLogout} to="/">Sign Out</Link>
     </nav>
   )
 }
@@ -31,7 +31,7 @@ const publicOptions = (
         <p className="drop" onClick={() => navigate(-1)}>Back</p>
       </div>
     </div>
-    <Link to="/products">Home</Link>
+    <Link to="/">Home</Link>
     <Link to="/Register">Register</Link>
     <Link to="/Signin">Sign In</Link>
     
@@ -40,7 +40,7 @@ const publicOptions = (
 
 return (
   <header className='sticky-header'>
-    <Link to="/products">
+    <Link to="/">
       <div className="navbar">
       <img className='logo'src={logo} alt="logo" />
         <img />

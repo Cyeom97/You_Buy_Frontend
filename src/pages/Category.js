@@ -34,7 +34,7 @@ const Category = () => {
           >
             <h3>{product.name}</h3>
             <img
-              width="200px"
+              className="imgVC"
               src={product.image}
               alt={product.name}
               id="ride-image"

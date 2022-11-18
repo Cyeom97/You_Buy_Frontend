@@ -18,6 +18,11 @@ const Profile = ({ user, authenticated }) => {
     category: '',
     ownerId: parseInt(id)
   })
+  const [timeInterval, setTimeInterval] = useState(0)
+
+  setTimeout(() => {
+    setTimeInterval(timeInterval + 1)
+  }, 5000)
 
   let navigate = useNavigate()
   const showButton = (event) => {
@@ -43,7 +48,7 @@ const Profile = ({ user, authenticated }) => {
       setProducts(productResponse.data)
     }
     handleUser()
-  }, [id])
+  }, [timeInterval])
 
   useEffect(() => {
     const handleUser = async () => {
@@ -72,7 +77,6 @@ const Profile = ({ user, authenticated }) => {
       [event.target.saleId]: event.target.defaultValue
     })
     let newProduct = await Client.post(`profile/${id}`, form)
-    setProducts([...products, newProduct.data])
     setForm({ name: '', description: '', image: '', price: '', category: '' })
   }
 
@@ -104,8 +108,6 @@ const Profile = ({ user, authenticated }) => {
   const handleUpdate = async (event) => {
     event.preventDefault()
     let updateProduct = await Client.put(`profile/${id}`, updateAProduct)
-    console.log(updateProduct)
-    setProducts([products, updateProduct.data])
     setUpdateAProduct({
       name: '',
       description: '',
@@ -118,7 +120,6 @@ const Profile = ({ user, authenticated }) => {
   const handleDelete = async () => {
     let response = await Client.delete(`profile/${deleted}`)
     const data = await response.data
-    setProducts([products, data])
     setDeleted('')
   }
 
