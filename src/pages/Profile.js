@@ -157,10 +157,10 @@ const Profile = ({ user, authenticated }) => {
           <option value="comics">Comics</option>
           <option value="collectible-cards">Collectible Cards</option>
           <option value="video-games">Video Games</option>
-          <option value="tech">Tech</option>
-          <option value="sports">Sports</option>
           <option value="toys">Toys</option>
           <option value="shoes">Shoes</option>
+          <option value="tech">Tech</option>
+          <option value="sports">Sports</option>
         </select>
         <input
           id="price"
