@@ -17,7 +17,7 @@ const Profile = ({ user, authenticated }) => {
     image: '',
     price: '',
     category: '',
-    ownerId: parseInt(id)
+    ownerId: id
   })
 
   //used to set time interval to help with getting useEffect to run again
@@ -26,7 +26,7 @@ const Profile = ({ user, authenticated }) => {
 
   setTimeout(() => {
     setTimeInterval(timeInterval + 1)
-  }, 5000)
+  }, 2000)
 
   //use to help hide and display elements on the page
 
@@ -88,7 +88,14 @@ const Profile = ({ user, authenticated }) => {
       [event.target.saleId]: event.target.defaultValue
     })
     let newProduct = await Client.post(`profile/${id}`, form)
-    setForm({ name: '', description: '', image: '', price: '', category: '' })
+    setForm({
+      name: '',
+      description: '',
+      image: '',
+      price: '',
+      category: '',
+      ownerId: id
+    })
   }
 
   const handleClick = (event) => {
